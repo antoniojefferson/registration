@@ -39,6 +39,9 @@ group :development, :test do
   gem 'factory_bot_rails', '5.1.1'
   gem 'rspec', '~> 3.13'
   gem 'rspec-rails', '~> 8.0'
+  gem 'rubocop', '~> 1.88', require: false
+  gem 'rubocop-rails', '~> 2.36', require: false
+  gem 'rubocop-rspec', '~> 3.10', require: false
   gem 'shoulda-matchers', '4.1.2'
 end
 
