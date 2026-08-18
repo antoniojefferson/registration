@@ -26,7 +26,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
-gem 'active_model_serializers', '~> 0.10.16'
+gem 'blueprinter', '~> 1.3'
 
 gem 'tzinfo-data', platforms: [:windows, :jruby]
 
@@ -39,6 +39,9 @@ group :development, :test do
   gem 'factory_bot_rails', '5.1.1'
   gem 'rspec', '~> 3.13'
   gem 'rspec-rails', '~> 8.0'
+  gem 'rubocop', '~> 1.88', require: false
+  gem 'rubocop-rails', '~> 2.36', require: false
+  gem 'rubocop-rspec', '~> 3.10', require: false
   gem 'shoulda-matchers', '4.1.2'
 end
 
