@@ -37,6 +37,9 @@ jobs:
       - name: Validar autoload do Rails
         run: bin/rails zeitwerk:check
 
+      - name: Validar estilo com RuboCop
+        run: bundle exec rubocop --format github
+
       - name: Executar RSpec
         run: bundle exec rspec
 
