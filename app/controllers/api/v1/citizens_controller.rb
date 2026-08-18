@@ -1,10 +1,12 @@
 module Api
   module V1
     class CitizensController < ApplicationController
-      before_action :set_citizen, except: %i[ create index ]
+      before_action :set_citizen, only: %i[show update]
 
       def index
-        render json: CitizenBlueprint.render_as_json(Citizen.all), status: :ok
+        citizens = Citizen.includes(:address).order(:id)
+
+        render json: CitizenBlueprint.render_as_json(citizens), status: :ok
       end
 
       def show
@@ -13,41 +15,35 @@ module Api
 
       def create
         @citizen = Citizen.new(citizen_params)
-        if @citizen.save
-          render json: CitizenBlueprint.render_as_json(@citizen), status: :created
-        else
-          render json: { errors: @citizen.errors.full_messages.join(', ') }, status: :unprocessable_entity
-        end
+        return render_citizen(@citizen, :created) if @citizen.save
+
+        render_validation_errors(@citizen)
       end
 
       def update
-        if @citizen.update(citizen_params)
-          render json: CitizenBlueprint.render_as_json(@citizen), status: :ok
-        else
-          render json: { errors: @citizen.errors.full_messages.join(', ') }, status: :unprocessable_entity
-        end
+        return render_citizen(@citizen, :ok) if @citizen.update(citizen_params)
+
+        render_validation_errors(@citizen)
       end
 
       private
 
       def set_citizen
-        @citizen = Citizen.find_by(id: params[:id])
-        render json: {error: I18n.t('activerecord.errors.models.citizen.not_found') } if @citizen.blank?
+        @citizen = Citizen.find(params.expect(:id))
+      end
+
+      def render_citizen(citizen, status)
+        render json: CitizenBlueprint.render_as_json(citizen), status: status
+      end
+
+      def render_validation_errors(citizen)
+        render json: { errors: citizen.errors.full_messages }, status: :unprocessable_content
       end
 
       def citizen_params
         params.permit(
           :full_name, :cpf, :cns, :email, :birth_date, :phone, :photo, :status,
-          address_attributes: [
-            :id,
-            :cep,
-            :logradouro,
-            :complement,
-            :district,
-            :city,
-            :uf,
-            :ibge_code
-          ]
+          address_attributes: %i[id cep logradouro complement district city uf ibge_code]
         )
       end
     end
