@@ -43,6 +43,9 @@ jobs:
       - name: Validar estilo com RuboCop
         run: bundle exec rubocop --format github
 
+      - name: Validar imagem Docker
+        run: docker build --tag registration-api:ci .
+
       - name: Executar RSpec
         run: bundle exec rspec
 
