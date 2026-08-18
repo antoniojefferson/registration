@@ -27,6 +27,7 @@ Centralizar o cadastro de cidadãos, seus dados de identificação, contato, fot
 - SQLite 3
 - Puma
 - Blueprinter
+- RuboCop, RuboCop Rails e RuboCop RSpec
 - CarrierWave
 - RSpec, FactoryBot e Shoulda Matchers
 
@@ -135,6 +136,7 @@ Erros de validação são retornados com status `422 Unprocessable Content` e a 
 
 ```bash
 bundle exec rspec
+bundle exec rubocop
 bin/rails test
 bin/rails zeitwerk:check
 ```
