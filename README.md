@@ -139,6 +139,8 @@ bin/rails test
 bin/rails zeitwerk:check
 ```
 
+Pull requests também são validados automaticamente pelo workflow de CI do GitHub Actions, que prepara o banco, verifica o autoload e executa as duas suítes de testes.
+
 Prepare separadamente o banco de testes, se necessário:
 
 ```bash

@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Testes e validações
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    env:
+      RAILS_ENV: test
+      DISABLE_SPRING: "1"
+
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v6
+
+      - name: Configurar Ruby e instalar gems
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+          bundler-cache: true
+
+      - name: Preparar banco de testes
+        run: bin/rails db:prepare
+
+      - name: Validar autoload do Rails
+        run: bin/rails zeitwerk:check
+
+      - name: Executar RSpec
+        run: bundle exec rspec
+
+      - name: Executar testes do Rails
+        run: bin/rails test
