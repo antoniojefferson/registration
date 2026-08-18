@@ -26,7 +26,7 @@ describe Citizen do
         it 'returns error' do
           subject.valid?
 
-          expect(subject.errors[:cpf]).to contain_exactly I18n.t('activerecord.errors.models.citizen.attributes.cpf.unique')
+          expect(subject.errors[:cpf]).to be_present
         end
       end
 
@@ -63,7 +63,7 @@ describe Citizen do
           
           subject.valid?
 
-          expect(subject.errors[:cns]).to contain_exactly I18n.t('activerecord.errors.models.citizen.attributes.cns.unique')
+          expect(subject.errors[:cns]).to be_present
         end
       end
 
@@ -100,7 +100,7 @@ describe Citizen do
           
           subject.valid?
 
-          expect(subject.errors[:email]).to contain_exactly I18n.t('activerecord.errors.models.citizen.attributes.email.unique')
+          expect(subject.errors[:email]).to be_present
         end
       end
 

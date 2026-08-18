@@ -69,8 +69,8 @@ RSpec.describe Api::V1::CitizensController, type: :controller do
         get :show, params: { id: 60 }
       end
 
-      it 'returns status 200' do
-        expect(response).to have_http_status(:ok)
+      it 'returns status 404' do
+        expect(response).to have_http_status(:not_found)
       end
 
       it 'returns the json a valid json with the error key' do
@@ -111,7 +111,7 @@ RSpec.describe Api::V1::CitizensController, type: :controller do
       end
 
       it 'returns unprocessable status' do
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
       end
     end
 
@@ -139,7 +139,7 @@ RSpec.describe Api::V1::CitizensController, type: :controller do
       end
 
       it 'returns unprocessable status' do
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
       end
     end
   end
@@ -170,7 +170,7 @@ RSpec.describe Api::V1::CitizensController, type: :controller do
       end
 
       it 'returns unprocessable status' do
-        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response).to have_http_status(:unprocessable_content)
       end
     end
   end

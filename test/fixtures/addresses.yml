@@ -1,21 +1,19 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  cep: 
-  logradouro: MyString
-  complement: MyString
-  district: MyString
-  city: MyString
-  uf: MyString
-  ibge_code: 
-  municipe: one
+  citizen: one
+  cep: "60170120"
+  logradouro: Avenida Beira Mar
+  complement: Apto 101
+  district: Meireles
+  city: Fortaleza
+  uf: CE
+  ibge_code: 2304400
 
 two:
-  cep: 
-  logradouro: MyString
-  complement: MyString
-  district: MyString
-  city: MyString
-  uf: MyString
-  ibge_code: 
-  municipe: two
+  citizen: two
+  cep: "01001000"
+  logradouro: Praça da Sé
+  complement: Casa 2
+  district: Sé
+  city: São Paulo
+  uf: SP
+  ibge_code: 3550308

@@ -1,35 +1,13 @@
 class Citizen < ApplicationRecord
-  has_one :address, :dependent => :destroy
+  has_one :address, dependent: :destroy, inverse_of: :citizen
+
   mount_uploader :photo, ImageUploader
-  accepts_nested_attributes_for :address, allow_destroy: true
-  validates :full_name, :cpf, :cns, :birth_date, :phone, presence: true
-  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, presence: true
+  accepts_nested_attributes_for :address
 
-  validate :unique_cpf, if: proc { |citizen| citizen.cpf.present? }
-  validate :unique_cns, if: proc { |citizen| citizen.cns.present? }
-  validate :unique_email, if: proc { |citizen| citizen.email.present? }
+  normalizes :cpf, :cns, with: ->(value) { value.strip }
+  normalizes :email, with: ->(value) { value.strip.downcase }
 
-  def unique_cpf
-    citizen = Citizen.find_by(cpf: self.cpf)
-    return unless citizen.present?
-    return if self == citizen
-    mensagem = I18n.t('activerecord.errors.models.citizen.attributes.cpf.unique')
-    errors.add(:cpf, mensagem) if citizen.present?
-  end
-
-  def unique_cns
-    citizen = Citizen.find_by(cns: self.cns)
-    return unless citizen.present?
-    return if self == citizen
-    mensagem = I18n.t('activerecord.errors.models.citizen.attributes.cns.unique')
-    errors.add(:cns, mensagem) if citizen.present?
-  end
-
-  def unique_email
-    citizen = Citizen.find_by(email: self.email)
-    return unless citizen.present?
-    return if self == citizen
-    mensagem = I18n.t('activerecord.errors.models.citizen.attributes.email.unique')
-    errors.add(:email, mensagem) if citizen.present?
-  end
+  validates :full_name, :cpf, :cns, :email, :birth_date, :phone, presence: true
+  validates :cpf, :cns, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: { case_sensitive: false }
 end

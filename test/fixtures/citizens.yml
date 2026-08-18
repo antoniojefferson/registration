@@ -1,21 +1,19 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  full_name: MyString
-  cpf: 
-  cns: 
-  email: MyString
-  birth_date: 2021-11-18
-  phone: 
-  photo: MyString
-  status: false
+  full_name: Maria da Silva
+  cpf: "52998224725"
+  cns: "898001160178219"
+  email: maria@example.com
+  birth_date: 1990-01-01
+  phone: 85999999999
+  photo:
+  status: true
 
 two:
-  full_name: MyString
-  cpf: 
-  cns: 
-  email: MyString
-  birth_date: 2021-11-18
-  phone: 
-  photo: MyString
+  full_name: João de Souza
+  cpf: "11144477735"
+  cns: "174598435280018"
+  email: joao@example.com
+  birth_date: 1985-05-20
+  phone: 85988888888
+  photo:
   status: false

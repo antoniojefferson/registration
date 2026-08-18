@@ -223,12 +223,6 @@ Style/FrozenStringLiteralComment:
     - 'spec/support/factory_helper.rb'
     - 'spec/support/response_spec_helper.rb'
     - 'spec/support/shoulda_matchers.rb'
-    - 'test/channels/application_cable/connection_test.rb'
-    - 'test/controllers/adresses_controller_test.rb'
-    - 'test/controllers/municipes_controller_test.rb'
-    - 'test/models/address_test.rb'
-    - 'test/models/citizen_test.rb'
-    - 'test/test_helper.rb'
 
 Style/GlobalStdStream:
   Exclude:
@@ -268,12 +262,6 @@ Style/StringLiterals:
     - 'config/spring.rb'
     - 'spec/controllers/citizens_controller_spec.rb'
     - 'spec/factories/addresses.rb'
-    - 'test/channels/application_cable/connection_test.rb'
-    - 'test/controllers/adresses_controller_test.rb'
-    - 'test/controllers/municipes_controller_test.rb'
-    - 'test/models/address_test.rb'
-    - 'test/models/citizen_test.rb'
-    - 'test/test_helper.rb'
 
 Style/SymbolArray:
   Exclude:
