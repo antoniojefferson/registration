@@ -135,19 +135,14 @@ Erros de validação são retornados com status `422 Unprocessable Content` e a 
 ## Testes e verificações
 
 ```bash
-bundle exec rspec
-bundle exec rubocop
-bin/rails test
-bin/rails zeitwerk:check
-```
-
-Pull requests também são validados automaticamente pelo workflow de CI do GitHub Actions, que prepara o banco, verifica o autoload e executa as duas suítes de testes.
-
-Prepare separadamente o banco de testes, se necessário:
-
-```bash
 RAILS_ENV=test bin/rails db:prepare
+bin/rails zeitwerk:check
+bundle exec rubocop
+bundle exec rspec
+bin/rails test
 ```
+
+O workflow de CI do GitHub Actions executa esses passos em pull requests, em pushes para `main` e quando acionado manualmente. As suítes RSpec e Minitest precisam passar para que o workflow seja concluído com sucesso.
 
 ## Estrutura principal
 
@@ -159,6 +154,7 @@ app/uploaders/           Configuração de upload de fotos
 config/routes.rb          Rotas da API
 db/migrate/              Histórico do banco de dados
 spec/                    Suíte RSpec
+test/                    Suíte Minitest e fixtures
 ```
 
 ## Banco de dados
