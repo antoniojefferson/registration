@@ -67,6 +67,30 @@ bin/rails server
 
 A API ficará disponível em [http://localhost:3000](http://localhost:3000).
 
+## Docker
+
+Para construir a imagem, preparar o banco e iniciar a API:
+
+```bash
+docker compose up --build
+```
+
+A API ficará disponível em [http://localhost:3000](http://localhost:3000). O código-fonte é montado dentro do container; o banco SQLite e os uploads criados durante o desenvolvimento permanecem no diretório do projeto.
+
+Execute comandos pontuais em um novo container com `docker compose run --rm`, por exemplo:
+
+```bash
+docker compose run --rm web bin/rails test
+docker compose run --rm web bundle exec rspec
+docker compose run --rm web bundle exec rubocop
+```
+
+Para encerrar os containers:
+
+```bash
+docker compose down
+```
+
 ## Endpoints
 
 Todos os endpoints usam o prefixo `/api/v1`.
@@ -142,7 +166,7 @@ bundle exec rspec
 bin/rails test
 ```
 
-O workflow de CI do GitHub Actions executa esses passos em pull requests, em pushes para `main` e quando acionado manualmente. As suítes RSpec e Minitest precisam passar para que o workflow seja concluído com sucesso.
+O workflow de CI do GitHub Actions executa esses passos em pull requests, em pushes para `main` e quando acionado manualmente. Ele também valida a construção da imagem Docker. As suítes RSpec e Minitest precisam passar para que o workflow seja concluído com sucesso.
 
 ## Estrutura principal
 
