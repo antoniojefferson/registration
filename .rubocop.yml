@@ -1,0 +1,26 @@
+inherit_from: .rubocop_todo.yml
+
+plugins:
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 3.3
+  NewCops: enable
+  SuggestExtensions: false
+  CacheRootDirectory: tmp/rubocop_cache
+  Exclude:
+    - "bin/**/*"
+    - "db/schema.rb"
+    - "tmp/**/*"
+    - "vendor/**/*"
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+
+RSpec/MultipleExpectations:
+  Max: 5
+
+Style/Documentation:
+  Enabled: false

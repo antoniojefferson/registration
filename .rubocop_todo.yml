@@ -1,0 +1,286 @@
+Bundler/OrderedGems:
+  Exclude:
+    - 'Gemfile'
+
+Layout/ArgumentAlignment:
+  Exclude:
+    - 'config/initializers/cors.rb'
+
+Layout/EmptyLineAfterGuardClause:
+  Exclude:
+    - 'app/models/citizen.rb'
+
+Layout/EmptyLines:
+  Exclude:
+    - 'config/environments/development.rb'
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'spec/controllers/citizens_controller_spec.rb'
+    - 'spec/models/address_spec.rb'
+    - 'spec/models/citizen_spec.rb'
+
+Layout/ExtraSpacing:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Layout/IndentationStyle:
+  Exclude:
+    - 'app/models/address.rb'
+
+Layout/IndentationWidth:
+  Exclude:
+    - 'app/models/address.rb'
+
+Layout/SpaceAroundOperators:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Layout/SpaceInsideHashLiteralBraces:
+  Exclude:
+    - 'app/controllers/api/v1/citizens_controller.rb'
+    - 'spec/controllers/citizens_controller_spec.rb'
+
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Exclude:
+    - 'app/controllers/api/v1/citizens_controller.rb'
+
+Layout/TrailingEmptyLines:
+  Exclude:
+    - 'app/models/citizen.rb'
+    - 'app/uploaders/image_uploader.rb'
+    - 'config/initializers/locale.rb'
+    - 'spec/controllers/citizens_controller_spec.rb'
+    - 'spec/factories/addresses.rb'
+    - 'spec/factories/citizens.rb'
+    - 'spec/support/factory_bot.rb'
+
+Layout/TrailingWhitespace:
+  Exclude:
+    - 'app/uploaders/image_uploader.rb'
+    - 'db/migrate/20211215172655_rename_municipes_table_name_to_citizens.rb'
+    - 'db/migrate/20211215172740_rename_adresses_table_name_to_addresses.rb'
+    - 'spec/controllers/citizens_controller_spec.rb'
+    - 'spec/models/citizen_spec.rb'
+    - 'spec/rails_helper.rb'
+
+Metrics/MethodLength:
+  Max: 13
+
+RSpec/ContextWording:
+  Exclude:
+    - 'spec/models/address_spec.rb'
+    - 'spec/models/citizen_spec.rb'
+
+RSpec/HookArgument:
+  Exclude:
+    - 'spec/rails_helper.rb'
+
+RSpec/LeadingSubject:
+  Exclude:
+    - 'spec/models/citizen_spec.rb'
+
+RSpec/LetSetup:
+  Exclude:
+    - 'spec/models/citizen_spec.rb'
+
+RSpec/MetadataStyle:
+  Exclude:
+    - 'spec/rails_helper.rb'
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
+
+RSpec/NamedSubject:
+  Exclude:
+    - 'spec/models/citizen_spec.rb'
+
+RSpec/NestedGroups:
+  Max: 4
+
+RSpec/SpecFilePathFormat:
+  Exclude:
+    - 'spec/controllers/citizens_controller_spec.rb'
+
+Rails/Blank:
+  Exclude:
+    - 'app/models/citizen.rb'
+
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/development.rb'
+    - 'config/initializers/locale.rb'
+
+Rails/HttpStatusNameConsistency:
+  Exclude:
+    - 'app/controllers/api/v1/citizens_controller.rb'
+
+Rails/ReversibleMigration:
+  Exclude:
+    - 'db/migrate/20211122230649_change_cpf_and_cns_to_municipes.rb'
+    - 'db/migrate/20211213165628_change_param_null_in_fields_to_adresses.rb'
+    - 'db/migrate/20211213170624_change_param_null_in_fields_to_municipes.rb'
+
+Rails/RootPathnameMethods:
+  Exclude:
+    - 'config/initializers/locale.rb'
+    - 'spec/rails_helper.rb'
+
+Rails/ThreeStateBooleanColumn:
+  Exclude:
+    - 'db/migrate/20211118052749_create_municipes.rb'
+
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/channels/application_cable/connection_test.rb'
+    - 'test/test_helper.rb'
+
+Style/Documentation:
+  Exclude:
+    - 'app/blueprints/address_blueprint.rb'
+    - 'app/blueprints/citizen_blueprint.rb'
+    - 'app/controllers/api/v1/citizens_controller.rb'
+    - 'app/mailers/application_mailer.rb'
+    - 'app/models/address.rb'
+    - 'app/models/application_record.rb'
+    - 'app/models/citizen.rb'
+    - 'app/uploaders/image_uploader.rb'
+    - 'config/application.rb'
+    - 'db/migrate/20211118052749_create_municipes.rb'
+    - 'db/migrate/20211118055014_create_adresses.rb'
+    - 'db/migrate/20211122230649_change_cpf_and_cns_to_municipes.rb'
+    - 'db/migrate/20211213165628_change_param_null_in_fields_to_adresses.rb'
+    - 'db/migrate/20211213170624_change_param_null_in_fields_to_municipes.rb'
+    - 'db/migrate/20211215172655_rename_municipes_table_name_to_citizens.rb'
+    - 'db/migrate/20211215172740_rename_adresses_table_name_to_addresses.rb'
+    - 'db/migrate/20211215185507_rename_municipe_field_to_addresses.rb'
+
+Style/ExpandPathArguments:
+  Exclude:
+    - 'spec/rails_helper.rb'
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'app/blueprints/address_blueprint.rb'
+    - 'app/blueprints/citizen_blueprint.rb'
+    - 'app/channels/application_cable/channel.rb'
+    - 'app/channels/application_cable/connection.rb'
+    - 'app/controllers/api/v1/citizens_controller.rb'
+    - 'app/controllers/application_controller.rb'
+    - 'app/jobs/application_job.rb'
+    - 'app/mailers/application_mailer.rb'
+    - 'app/models/address.rb'
+    - 'app/models/application_record.rb'
+    - 'app/models/citizen.rb'
+    - 'app/uploaders/image_uploader.rb'
+    - 'config.ru'
+    - 'config/application.rb'
+    - 'config/boot.rb'
+    - 'config/environment.rb'
+    - 'config/environments/development.rb'
+    - 'config/environments/production.rb'
+    - 'config/environments/test.rb'
+    - 'config/initializers/application_controller_renderer.rb'
+    - 'config/initializers/backtrace_silencers.rb'
+    - 'config/initializers/cors.rb'
+    - 'config/initializers/filter_parameter_logging.rb'
+    - 'config/initializers/inflections.rb'
+    - 'config/initializers/locale.rb'
+    - 'config/initializers/mime_types.rb'
+    - 'config/initializers/wrap_parameters.rb'
+    - 'config/puma.rb'
+    - 'config/routes.rb'
+    - 'config/spring.rb'
+    - 'db/migrate/20211118052749_create_municipes.rb'
+    - 'db/migrate/20211118055014_create_adresses.rb'
+    - 'db/migrate/20211122230649_change_cpf_and_cns_to_municipes.rb'
+    - 'db/migrate/20211213165628_change_param_null_in_fields_to_adresses.rb'
+    - 'db/migrate/20211213170624_change_param_null_in_fields_to_municipes.rb'
+    - 'db/migrate/20211215172655_rename_municipes_table_name_to_citizens.rb'
+    - 'db/migrate/20211215172740_rename_adresses_table_name_to_addresses.rb'
+    - 'db/migrate/20211215185507_rename_municipe_field_to_addresses.rb'
+    - 'db/seeds.rb'
+    - 'spec/blueprints/address_blueprint_spec.rb'
+    - 'spec/blueprints/citizen_blueprint_spec.rb'
+    - 'spec/controllers/citizens_controller_spec.rb'
+    - 'spec/factories/addresses.rb'
+    - 'spec/factories/citizens.rb'
+    - 'spec/models/address_spec.rb'
+    - 'spec/models/citizen_spec.rb'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'spec/support/factory_bot.rb'
+    - 'spec/support/factory_helper.rb'
+    - 'spec/support/response_spec_helper.rb'
+    - 'spec/support/shoulda_matchers.rb'
+    - 'test/channels/application_cable/connection_test.rb'
+    - 'test/controllers/adresses_controller_test.rb'
+    - 'test/controllers/municipes_controller_test.rb'
+    - 'test/models/address_test.rb'
+    - 'test/models/citizen_test.rb'
+    - 'test/test_helper.rb'
+
+Style/GlobalStdStream:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Style/HashSyntax:
+  Exclude:
+    - 'app/models/citizen.rb'
+    - 'db/migrate/20211213165628_change_param_null_in_fields_to_adresses.rb'
+    - 'db/migrate/20211213170624_change_param_null_in_fields_to_municipes.rb'
+
+Style/RedundantConstantBase:
+  Exclude:
+    - 'config/environments/production.rb'
+
+Style/RedundantFetchBlock:
+  Exclude:
+    - 'config/puma.rb'
+
+Style/RedundantSelf:
+  Exclude:
+    - 'app/models/citizen.rb'
+
+Style/StringLiterals:
+  Exclude:
+    - 'Rakefile'
+    - 'config.ru'
+    - 'config/application.rb'
+    - 'config/boot.rb'
+    - 'config/environment.rb'
+    - 'config/environments/development.rb'
+    - 'config/environments/production.rb'
+    - 'config/environments/test.rb'
+    - 'config/initializers/backtrace_silencers.rb'
+    - 'config/initializers/locale.rb'
+    - 'config/puma.rb'
+    - 'config/spring.rb'
+    - 'spec/controllers/citizens_controller_spec.rb'
+    - 'spec/factories/addresses.rb'
+    - 'test/channels/application_cable/connection_test.rb'
+    - 'test/controllers/adresses_controller_test.rb'
+    - 'test/controllers/municipes_controller_test.rb'
+    - 'test/models/address_test.rb'
+    - 'test/models/citizen_test.rb'
+    - 'test/test_helper.rb'
+
+Style/SymbolArray:
+  Exclude:
+    - 'Gemfile'
+    - 'app/controllers/api/v1/citizens_controller.rb'
+    - 'config/initializers/cors.rb'
+    - 'config/initializers/filter_parameter_logging.rb'
+
+Layout/LineLength:
+  Max: 129
