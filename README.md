@@ -26,7 +26,7 @@ Centralizar o cadastro de cidadãos, seus dados de identificação, contato, fot
 - Rails 8.1.3.1
 - SQLite 3
 - Puma
-- Active Model Serializers
+- Blueprinter
 - CarrierWave
 - RSpec, FactoryBot e Shoulda Matchers
 
@@ -152,9 +152,9 @@ RAILS_ENV=test bin/rails db:prepare
 ```text
 app/controllers/api/v1/  Endpoints versionados
 app/models/              Regras e validações de domínio
-app/serializers/         Formato das respostas JSON
+app/blueprints/          Formato das respostas JSON
 app/uploaders/           Configuração de upload de fotos
-config/routes.rb         Rotas da API
+config/routes.rb          Rotas da API
 db/migrate/              Histórico do banco de dados
 spec/                    Suíte RSpec
 ```
