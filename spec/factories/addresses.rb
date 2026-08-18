@@ -1,11 +1,11 @@
 FactoryBot.define do
   factory :address do
-    cep { FFaker::AddressBR.zip_code }
-    logradouro { FFaker::AddressBR.street }
-    complement { "Teste" }
+    sequence(:cep) { |number| format('%08d', number) }
+    sequence(:logradouro) { |number| "Rua #{number}" }
+    complement { 'Teste' }
     district { 'Centro' }
-    city { FFaker::AddressBR.city }
-    uf { FFaker::AddressBR.state_abbr }
+    city { 'Fortaleza' }
+    uf { 'CE' }
     ibge_code { 123 }
     citizen
   end

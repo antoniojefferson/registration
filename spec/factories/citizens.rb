@@ -1,12 +1,11 @@
 FactoryBot.define do
   factory :citizen do
-    full_name { FFaker::NameBR.name }
-    cpf { FFaker::IdentificationBR.cpf }
-    cns { FFaker::Bank.card_number }
-    email { FFaker::Internet.email }
+    sequence(:full_name) { |number| "Cidadão #{number}" }
+    sequence(:cpf) { |number| format('%011d', number) }
+    sequence(:cns) { |number| format('%015d', number) }
+    sequence(:email) { |number| "cidadao#{number}@example.com" }
     birth_date { Date.current }
-    phone { FFaker::PhoneNumberBR.mobile_phone_number }
-    photo { Rack::Test::UploadedFile.new(Rails.root.join('spec/support/uploads/image.jpg'), 'image/jpeg') }
+    sequence(:phone) { |number| 85_900_000_000 + number }
     status { false }
   end
 end
